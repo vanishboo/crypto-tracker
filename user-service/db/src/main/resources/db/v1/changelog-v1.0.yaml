@@ -1,0 +1,3 @@
+databaseChangeLog:
+  - include:
+      file: db/v1/DDL/20260327-init-table-user.yaml
