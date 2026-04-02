@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/v1/DDL/20260327-init-table-user.yaml
+  - include:
+      file: db/v1/DDL/20260328-table-refresh-token.yaml

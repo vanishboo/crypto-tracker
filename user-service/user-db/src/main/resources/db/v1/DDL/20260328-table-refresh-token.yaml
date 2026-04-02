@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-refresh-token
+      author: vanishboo
+      changes:
+        - createTable:
+            tableName: refresh_token
+            columns:
+              - column:
+                  name: token
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: user_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_refresh_token_user
+                    references: account(id)
+              - column:
+                  name: expires_at
+                  type: timestamptz
+                  constraints:
+                    nullable: false

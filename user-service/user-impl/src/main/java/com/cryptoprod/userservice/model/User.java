@@ -36,10 +36,10 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role = Role.USER;
 
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "created_at", nullable = false, insertable = false, updatable = false)
     private Instant createdAt;
 
-    @Column(name = "updated_at", nullable = false)
+    @Column(name = "updated_at", nullable = false, insertable = false)
     private Instant updatedAt;
 
     @PreUpdate
