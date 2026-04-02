@@ -1,9 +1,9 @@
 package com.cryptoprod.userservice.service;
 
-import com.cryptoprod.userservice.dto.LoginRequest;
-import com.cryptoprod.userservice.dto.RefreshRequest;
-import com.cryptoprod.userservice.dto.RegisterRequest;
-import com.cryptoprod.userservice.dto.TokenCoupleResponse;
+import dto.LoginRequest;
+import dto.RefreshRequest;
+import dto.RegisterRequest;
+import dto.TokenCoupleResponse;
 import com.cryptoprod.userservice.model.RefreshToken;
 import com.cryptoprod.userservice.model.Role;
 import com.cryptoprod.userservice.model.User;
@@ -85,7 +85,6 @@ public class AuthService {
 
         UUID refreshToken = UUID.randomUUID();
         refreshTokenRepository.deleteByUser(user);
-
         refreshTokenRepository.save(RefreshToken.builder()
                 .token(refreshToken)
                 .user(user)

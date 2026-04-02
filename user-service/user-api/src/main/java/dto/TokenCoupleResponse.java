@@ -1,4 +1,4 @@
-package com.cryptoprod.userservice.dto;
+package dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
