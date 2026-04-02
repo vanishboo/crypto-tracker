@@ -14,9 +14,9 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>api</module>
-		<module>db</module>
-		<module>impl</module>
+		<module>user-api</module>
+		<module>user-db</module>
+		<module>user-impl</module>
 	</modules>
 
 
