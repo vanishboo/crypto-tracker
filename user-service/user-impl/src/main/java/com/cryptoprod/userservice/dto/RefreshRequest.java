@@ -1,4 +1,4 @@
-package dto;
+package com.cryptoprod.userservice.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.cryptoprod.userservice.security.service;
+package com.cryptoprod.common.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

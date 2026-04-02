@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: create-refresh-token
+      id: refresh-token-1
       author: vanishboo
       changes:
         - createTable:

@@ -1,15 +1,16 @@
 package com.cryptoprod.userservice.service;
 
-import dto.LoginRequest;
-import dto.RefreshRequest;
-import dto.RegisterRequest;
-import dto.TokenCoupleResponse;
+
+import com.cryptoprod.common.security.JwtService;
+import com.cryptoprod.userservice.dto.LoginRequest;
+import com.cryptoprod.userservice.dto.RefreshRequest;
+import com.cryptoprod.userservice.dto.RegisterRequest;
+import com.cryptoprod.userservice.dto.TokenCoupleResponse;
 import com.cryptoprod.userservice.model.RefreshToken;
 import com.cryptoprod.userservice.model.Role;
 import com.cryptoprod.userservice.model.User;
 import com.cryptoprod.userservice.repository.RefreshTokenRepository;
 import com.cryptoprod.userservice.repository.UserRepository;
-import com.cryptoprod.userservice.security.service.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -48,6 +49,9 @@ public class AuthService {
                 .role(Role.USER)
                 .password(passwordEncoder.encode(request.getPassword()))
                 .build();
+
+        user = userRepository.save(user);
+
         return buildTokenCouple(user);
     }
 

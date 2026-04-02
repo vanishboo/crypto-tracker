@@ -1,10 +1,10 @@
 package com.cryptoprod.userservice.controllers;
 
-import api.AuthApi;
-import dto.LoginRequest;
-import dto.RefreshRequest;
-import dto.RegisterRequest;
-import dto.TokenCoupleResponse;
+
+import com.cryptoprod.userservice.dto.LoginRequest;
+import com.cryptoprod.userservice.dto.RefreshRequest;
+import com.cryptoprod.userservice.dto.RegisterRequest;
+import com.cryptoprod.userservice.dto.TokenCoupleResponse;
 import com.cryptoprod.userservice.service.AuthService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
