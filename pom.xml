@@ -19,6 +19,7 @@
     <modules>
         <module>common</module>
         <module>user-service</module>
+        <module>alert-service</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

@@ -14,6 +14,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
 @RequiredArgsConstructor
 public class TokenAuthenticationFilter extends OncePerRequestFilter {
@@ -38,10 +39,13 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
                     .stream()
                     .map(SimpleGrantedAuthority::new)
                     .toList();
-
+            AccountResponse accountResponse = new AccountResponse(
+                    UUID.fromString(claims.get("userId", String.class)),
+                    claims.getSubject()
+            );
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
-                    claims.getSubject(),
-                    null,
+                    accountResponse,
+                    token,
                     authorities);
 
             SecurityContextHolder.getContext().setAuthentication(authentication);

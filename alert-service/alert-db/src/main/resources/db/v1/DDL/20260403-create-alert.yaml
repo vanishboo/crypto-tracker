@@ -55,3 +55,17 @@ databaseChangeLog:
             columns:
               - column:
                   name: user_id
+
+  - changeSet:
+      id: 3-add-column-symbol
+      author: vanishboo
+      changes:
+        - addColumn:
+            tableName: alert
+            columns:
+              - column:
+                  name: symbol
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+                  defaultValue: 'UNKNOWN'
