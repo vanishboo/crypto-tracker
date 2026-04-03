@@ -85,6 +85,7 @@ public class AuthService {
     private TokenCoupleResponse buildTokenCouple(User user) {
         String accessToken = jwtService.generateAccessToken(
                 user.getEmail(),
+                user.getId(),
                 Collections.singletonList(user.getRole().name()));
 
         UUID refreshToken = UUID.randomUUID();
