@@ -1,0 +1,57 @@
+databaseChangeLog:
+  - changeSet:
+      id: alert-1
+      author: vanishboo
+      changes:
+        - createTable:
+            tableName: alert
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: user_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: coin_id
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: target_price
+                  type: decimal(20,8)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: condition
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: active
+                  type: boolean
+                  defaultValueBoolean: true
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamptz
+                  defaultValueComputed: NOW()
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 2-add-index-alert-user_id
+      author: vanishboo
+      changes:
+        - createIndex:
+            tableName: alert
+            indexName: idx_alert_user_id
+            columns:
+              - column:
+                  name: user_id
