@@ -12,5 +12,5 @@ spring:
 
 coingecko:
   api-url: https://api.coingecko.com/api/v3
-  coins: bitcoin,ethereum
+  coins: bitcoin,ethereum,solana
   api-key: ${COINGECKO_API_KEY}
