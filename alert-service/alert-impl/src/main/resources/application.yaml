@@ -1,0 +1,24 @@
+server:
+  port: 8082
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+  liquibase:
+    change-log: classpath:/db/databasechangelog-master.yaml
+  datasource:
+    url: jdbc:postgresql://localhost:5432/crypto-alert-service
+    username: postgres
+    password: postgres
+
+jwt:
+  secret: ${JWT_SECRET}
+  access-expiration: 900000
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs

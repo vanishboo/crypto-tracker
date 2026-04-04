@@ -11,6 +11,7 @@ import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @Service
@@ -26,10 +27,11 @@ public class JwtService {
         return Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
     }
 
-    public String generateAccessToken(String email, List<String> authorities) {
+    public String generateAccessToken(String email, UUID userId, List<String> authorities) {
         return Jwts.builder()
                 .subject(email)
                 .claim("authorities", authorities)
+                .claim("userId", userId.toString())
                 .issuedAt(new Date())
                 .expiration(new Date(System.currentTimeMillis() + accessTokenExpireTime))
                 .signWith(getKey())
