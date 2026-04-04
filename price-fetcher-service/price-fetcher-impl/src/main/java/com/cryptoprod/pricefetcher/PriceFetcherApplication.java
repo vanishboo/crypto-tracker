@@ -1,0 +1,13 @@
+package com.cryptoprod.pricefetcher;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+@SpringBootApplication
+@EnableScheduling
+public class PriceFetcherApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(PriceFetcherApplication.class, args);
+    }
+}

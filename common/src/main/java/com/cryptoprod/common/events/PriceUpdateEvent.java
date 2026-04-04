@@ -7,5 +7,5 @@ public record PriceUpdateEvent(
     String coinId,
     String symbol,
     BigDecimal price,
-    Instant timestamo
+    Instant timestamp
 ) {}
