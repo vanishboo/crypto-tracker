@@ -21,6 +21,7 @@
         <module>user-service</module>
         <module>alert-service</module>
         <module>price-fetcher-service</module>
+        <module>notification-service</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

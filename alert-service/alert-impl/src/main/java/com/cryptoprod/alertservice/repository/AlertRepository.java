@@ -11,4 +11,7 @@ public interface AlertRepository extends JpaRepository<Alert, UUID> {
     List<Alert> findByUserId(UUID userId);
 
     List<Alert> findByUserIdAndActiveTrue(UUID userId);
+
+    List<Alert> findByCoinIdAndActiveTrue(String coinId);
+
 }
