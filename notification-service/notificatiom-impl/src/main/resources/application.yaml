@@ -5,7 +5,7 @@ spring:
   kafka:
     bootstrap-servers: localhost:9092
     consumer:
-
+      topics: price-updates
       group-id: notification-group
 
       auto-offset-reset: latest

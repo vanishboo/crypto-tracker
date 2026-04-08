@@ -16,7 +16,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class WebSocketNotificationSender implements NotificationSender {
 
-    private SimpMessagingTemplate simpMessagingTemplate;
+    private final SimpMessagingTemplate simpMessagingTemplate;
 
     @Override
     public void send(UUID userId, AlertResponse alert, BigDecimal actualPrice) {

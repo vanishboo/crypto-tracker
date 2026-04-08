@@ -11,6 +11,7 @@ import java.util.UUID;
 public class AlertResponse {
 
     private UUID id;
+    private UUID userId;
     private String coinId;
     private String symbol;
     private BigDecimal price;
