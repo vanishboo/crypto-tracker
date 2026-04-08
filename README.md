@@ -94,7 +94,7 @@
 - [x] `alert-service` — CRUD алертов
 - [x] `price-fetcher-service` — CoinGecko, Kafka producer
 - [x] `common` модуль — JWT, фильтры, Kafka события
-- [ ] `notification-service` — Kafka consumer, Redis, WebSocket
+- [x] `notification-service` — Kafka consumer, Redis, WebSocket
 - [ ] API Gateway — Spring Cloud Gateway
 - [ ] Docker Compose — полный деплой всех сервисов
 - [ ] README — финальная документация
