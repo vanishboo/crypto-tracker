@@ -55,4 +55,12 @@ public class AlertService {
         alertRepository.delete(alert);
     }
 
+    @Transactional
+    public List<AlertResponse> getAllByCoinId(String coinId) {
+        return alertRepository.findByCoinIdAndActiveTrue(coinId)
+                .stream()
+                .map(AlertResponse::from)
+                .collect(Collectors.toList());
+    }
+
 }
