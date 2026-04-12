@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PriceConsumer {
 
-    private AlertMatchingService alertMatchingService;
+    private final AlertMatchingService alertMatchingService;
 
     @KafkaListener(
             topics = "${spring.kafka.consumer.topics}",

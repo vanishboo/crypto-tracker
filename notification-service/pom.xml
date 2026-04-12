@@ -12,7 +12,7 @@
     <artifactId>notification-service</artifactId>
 
     <modules>
-        <module>notificatiom-impl</module>
+        <module>notification-impl</module>
     </modules>
 
     <packaging>pom</packaging>
