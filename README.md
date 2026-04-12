@@ -95,9 +95,9 @@
 - [x] `price-fetcher-service` — CoinGecko, Kafka producer
 - [x] `common` модуль — JWT, фильтры, Kafka события
 - [x] `notification-service` — Kafka consumer, Redis, WebSocket
+- [x] Docker Compose — полный деплой всех сервисов
 - [ ] API Gateway — Spring Cloud Gateway
-- [ ] Docker Compose — полный деплой всех сервисов
-- [ ] README — финальная документация
+
 
 ---
 
