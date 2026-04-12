@@ -28,3 +28,6 @@ alert-service:
 notification:
   cooldown-minutes: 30
 
+jwt:
+  secret: qwerty007superpassword2006coolcoolcool
+  access-expiration: 900000

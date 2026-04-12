@@ -45,7 +45,7 @@ public class AlertMatchingService {
         }
         log.info("Alert {} triggered: {} {} {} (actual: {})",
                 alert.getId(), alert.getSymbol(),
-                alert.getCondition(), alert.getPrice(), actualPrice);
+                alert.getCondition(), alert.getTargetPrice(), actualPrice);
 
         String lockKey = "alert-lock:" + alert.getId();
         if (redisTemplate.hasKey(lockKey)) {
@@ -63,8 +63,8 @@ public class AlertMatchingService {
 
     private boolean isTriggered(AlertResponse alert, BigDecimal actualPrice) {
         return switch (alert.getCondition()) {
-            case "BELOW" -> actualPrice.compareTo(alert.getPrice()) < 0;
-            case "ABOVE" -> actualPrice.compareTo(alert.getPrice()) > 0;
+            case "BELOW" -> actualPrice.compareTo(alert.getTargetPrice()) < 0;
+            case "ABOVE" -> actualPrice.compareTo(alert.getTargetPrice()) > 0;
             default -> false;
         };
     }

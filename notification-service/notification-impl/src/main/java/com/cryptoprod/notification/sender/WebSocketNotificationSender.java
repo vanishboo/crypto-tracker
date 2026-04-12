@@ -25,7 +25,7 @@ public class WebSocketNotificationSender implements NotificationSender {
         payload.put("coinId", alert.getCoinId());
         payload.put("symbol", alert.getSymbol());
         payload.put("condition", alert.getCondition());
-        payload.put("targetPrice", alert.getPrice());
+        payload.put("targetPrice", alert.getTargetPrice());
         payload.put("actualPrice", actualPrice);
         payload.put("message", buildMessage(alert, actualPrice));
 
@@ -43,7 +43,7 @@ public class WebSocketNotificationSender implements NotificationSender {
         return String.format("%s %s $%s (текущая цена: $%s)",
                 alert.getSymbol(),
                 direction,
-                alert.getPrice(),
+                alert.getTargetPrice(),
                 actualPrice);
     }
 
