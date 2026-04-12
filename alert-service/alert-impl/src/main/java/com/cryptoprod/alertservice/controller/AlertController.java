@@ -46,7 +46,7 @@ public class AlertController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable UUID id) {
         UUID userId = getAccountResponse().getId();
-        alertService.delete(userId, id);
+        alertService.delete(id, userId);
         return ResponseEntity.noContent().build();
     }
 

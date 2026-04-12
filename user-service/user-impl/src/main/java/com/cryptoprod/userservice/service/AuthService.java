@@ -95,6 +95,6 @@ public class AuthService {
                 .user(user)
                 .expiresAt(Instant.now().plusMillis(refreshTokenExpiration))
                 .build());
-        return new TokenCoupleResponse(accessToken, refreshToken.toString());
+        return new TokenCoupleResponse(accessToken, refreshToken.toString(), user.getId());
     }
 }

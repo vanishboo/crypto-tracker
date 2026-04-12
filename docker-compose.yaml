@@ -133,7 +133,7 @@ services:
       SPRING_DATA_REDIS_HOST: redis
       ALERT_SERVICE_URL: http://alert-service:8082
       SERVER_PORT: 8084
-      JWT_SECRET: ${JWT_SECRET}
+
 
 volumes:
   postgres_user_data:

@@ -50,6 +50,7 @@ public class AlertMatchingService {
         String lockKey = "alert-lock:" + alert.getId();
         if (redisTemplate.hasKey(lockKey)) {
             log.debug("Alert {} is in cooldown, skipping", alert.getId());
+            return;
         }
 
         redisTemplate.opsForValue().set(
